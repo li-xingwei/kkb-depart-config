@@ -1,0 +1,39 @@
+#配置dev环境
+server:
+  port: 7070
+spring:
+  application:
+    name: abcmsc-consumer-config
+  profiles: dev
+eureka:
+  instance:
+    hostname: eureka01.com
+  client:
+    service-url:
+      defaultZone: http://eureka01.com:8300/eureka
+    register-with-eureka: false
+    fetch-registry: false
+#开启feign对hystrix的支持
+feign:
+  hystrix:
+    enabled: true
+---
+#配置test环境
+server:
+  port: 9090
+spring:
+  application:
+    name: abcmsc-consumer-config
+  profiles: test
+eureka:
+  instance:
+    hostname: eureka01.com
+  client:
+    service-url:
+      defaultZone: http://eureka01.com:8400/eureka
+    register-with-eureka: false
+    fetch-registry: false
+#开启feign对hystrix的支持
+feign:
+  hystrix:
+    enabled: true

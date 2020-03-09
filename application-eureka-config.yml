@@ -1,0 +1,30 @@
+server:
+  port: 8300
+spring:
+  application:
+    name: abcmsc-eurekaserver-config
+  profiles: dev
+eureka:
+  instance:
+    hostname: eureka01.com
+  client:
+    service-url:
+      defaultZone: http://eureka01.com:${server.port}/eureka
+    register-with-eureka: false
+    fetch-registry: false
+---
+#配置test环境
+spring:
+  application:
+    name: abcmsc-eurekaserver-config
+  profiles: test
+eureka:
+  instance:
+    hostname: eureka01.com
+  client:
+    service-url:
+      defaultZone: http://eureka01.com:${server.port}/eureka
+    register-with-eureka: false
+    fetch-registry: false
+server:
+  port: 8400

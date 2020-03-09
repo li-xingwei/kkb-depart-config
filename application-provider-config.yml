@@ -1,0 +1,59 @@
+#配置dev环境
+server:
+  port: 8084
+spring:
+  application:
+    name: abcmsc-provider-config
+  profiles: dev
+  jpa:
+    #应用启动时是否自动建表，默认为false
+    generate-ddl: true
+    #是否在控制台显示sql，默认为false
+    show-sql: true
+    hibernate:
+      #设置应用启动时不重新建表
+      ddl-auto: none
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test02?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+eureka:
+  instance:
+    hostname: eureka01.com
+  client:
+    service-url:
+      defaultZone: http://eureka01.com:8300/eureka
+    register-with-eureka: false
+    fetch-registry: false
+---
+#配置test环境
+server:
+  port: 8085
+spring:
+  application:
+    name: abcmsc-provider-config
+  profiles: test
+  jpa:
+    #应用启动时是否自动建表，默认为false
+    generate-ddl: true
+    #是否在控制台显示sql，默认为false
+    show-sql: true
+    hibernate:
+      #设置应用启动时不重新建表
+      ddl-auto: none
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test03?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+eureka:
+  instance:
+    hostname: eureka01.com
+  client:
+    service-url:
+      defaultZone: http://eureka01.com:8400/eureka
+    register-with-eureka: false
+    fetch-registry: false
