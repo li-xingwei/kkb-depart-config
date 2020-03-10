@@ -25,8 +25,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka01.com:8300/eureka
-    register-with-eureka: false
-    fetch-registry: false
 ---
 #配置test环境
 server:
@@ -55,5 +53,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka01.com:8400/eureka
-    register-with-eureka: false
-    fetch-registry: false

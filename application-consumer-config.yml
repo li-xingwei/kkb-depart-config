@@ -11,8 +11,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka01.com:8300/eureka
-    register-with-eureka: false
-    fetch-registry: false
 #开启feign对hystrix的支持
 feign:
   hystrix:
@@ -31,8 +29,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka01.com:8400/eureka
-    register-with-eureka: false
-    fetch-registry: false
 #开启feign对hystrix的支持
 feign:
   hystrix:
